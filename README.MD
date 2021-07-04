@@ -2,7 +2,7 @@
 
 # **[chrome_extension_react_typescript](https://github.com/youyiqin/chrome_extension_react_typescript)**
 
-nothing else.
+Nothing else.
 
 Just working for chrome extension developer.
 
