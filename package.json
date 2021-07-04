@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "chrome_extension_react_typescript",
   "version": "1.0.0",
   "main": "./src/index.tsx",
   "author": "youyiqin <564151947@qq.com>",
