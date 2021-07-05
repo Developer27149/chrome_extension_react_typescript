@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-scss",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "comment-empty-line-before": "always",
+    "declaration-empty-line-before": null,
+    "function-name-case": "lower",
+    "no-descending-specificity": null,
+    "no-invalid-double-slash-comments": null
+  },
+  "ignoreFiles": [
+    "node_modules/**/*",
+    "src/assets/**/*",
+    "dist/**/*",
+    "**/typings/**/*"
+  ]
+}

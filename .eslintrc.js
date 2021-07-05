@@ -10,6 +10,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:eslint-comments/recommended',
+    'plugin:promise/recommended',
+    'plugin:unicorn/recommended',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -22,9 +28,14 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-
+    'promise',
+    'eslint-comments',
+    'import',
+    'unicorn',
+    'prettier',
   ],
   rules: {
+    'no-console': 'off',
   },
   settings: {
     'import/resolver': {
@@ -33,8 +44,9 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.json', '.js'],
       },
       typescript: {
-        directory: [resolve('./tsconfig.json'), resolve('./script/tsconfig.json')], //  eslint-disable-line
+        // directory: [resolve('./tsconfig.json'), resolve('./script/tsconfig.json')],
       },
     },
   },
+  ignorePatterns: ['.eslintrc.js', 'prettier.config.js'],
 };

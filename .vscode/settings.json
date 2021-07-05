@@ -1,4 +1,8 @@
 {
   "editor.formatOnSave": true,
-  "editor.trimAutoWhitespace": true
+  "editor.trimAutoWhitespace": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[scss]": {
+    "editor.suggest.insertMode": "replace"
+  }
 }
