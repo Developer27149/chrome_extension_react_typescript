@@ -1,6 +1,4 @@
-const cc = 1;
-const a = (c: number) => {
-  // ok
-  console.log('ok', c);
-};
-a(cc);
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.querySelector('#root'));
