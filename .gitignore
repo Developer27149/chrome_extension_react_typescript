@@ -78,6 +78,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# webpack
+build
+
 # Next.js build output
 .next
 out
@@ -123,7 +126,8 @@ dist
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

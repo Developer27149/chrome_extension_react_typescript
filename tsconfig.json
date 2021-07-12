@@ -40,5 +40,5 @@
     "target": "ES6",
     "module": "ESNext"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }
