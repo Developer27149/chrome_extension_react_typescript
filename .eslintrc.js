@@ -4,18 +4,16 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -36,6 +34,7 @@ module.exports = {
   ],
   rules: {
     'no-console': 'off',
+    'import/extensions': ['never'],
   },
   settings: {
     'import/resolver': {
@@ -44,9 +43,14 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.json', '.js'],
       },
       typescript: {
-        // directory: [resolve('./tsconfig.json'), resolve('./script/tsconfig.json')],
+        directory: [resolve('./tsconfig.json')],
       },
     },
   },
-  ignorePatterns: ['.eslintrc.js', 'prettier.config.js'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    'prettier.config.js',
+    'config/*',
+    'babel.config.js',
+  ],
 };

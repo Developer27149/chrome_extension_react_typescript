@@ -9,6 +9,7 @@ module.exports = function (api) {
       },
     ],
     '@babel/preset-typescript',
+    '@linaria',
   ];
   const plugins = [
     [
