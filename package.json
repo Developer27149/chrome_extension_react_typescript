@@ -84,8 +84,7 @@
     ]
   },
   "scripts": {
-    "dev": "webpack serve --mode=development --config config/webpack.common.js --open",
-    "build": "webpack build --config config/webpack.common.js",
-    "build:prod": "webpack build --mode=production --config config/webpack.common.js"
+    "dev": "webpack serve --mode=development --config config/webpack.common.js --open --progress",
+    "build": "webpack build --mode=production --config config/webpack.common.js --progress"
   }
 }

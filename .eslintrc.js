@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -10,9 +11,18 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
-    'plugin:react/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:react/recommended',
+    'prettier',
+  ],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'promise',
+    'eslint-comments',
+    'import',
+    'unicorn',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -23,18 +33,15 @@ module.exports = {
     ecmaVersion: 18,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'promise',
-    'eslint-comments',
-    'import',
-    'unicorn',
-    'prettier',
-  ],
   rules: {
     'no-console': 'off',
-    'import/extensions': ['never'],
+    'unicorn/filename-case': 'off',
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
+    'react/react-in-jsx-scope': 'off',
+    'import/extensions': 'off',
   },
   settings: {
     'import/resolver': {
@@ -43,14 +50,17 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.json', '.js'],
       },
       typescript: {
-        directory: [resolve('./tsconfig.json')],
+        directory: './tsconfig.json',
       },
     },
   },
   ignorePatterns: [
-    '.eslintrc.js',
     'prettier.config.js',
     'config/*',
     'babel.config.js',
+    '.eslintrc.js',
+    'init_manifest.js',
+    'config/manifest.json',
+    'build/**/*',
   ],
 };

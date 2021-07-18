@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { default: merge } = require('webpack-merge');
@@ -61,7 +61,7 @@ const commonConfig = {
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, '..', './build'),
-    filename: 'bundle.js',
+    filename: 'scripts/bundle.js',
   },
   mode: 'development',
   plugins: [
@@ -71,22 +71,34 @@ const commonConfig = {
     }),
     new FriendlyErrorsWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'css/style.css',
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: 'src/public',
-    //       to: 'public',
-    //       toType: 'dir',
-    //     },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'config/manifest.json',
+          to: './',
+          toType: 'dir',
+        },
+      ],
+    }),
   ],
 };
 
 const prodConfig = {
-  plugins: [new BundleAnalyzerPlugin({})],
+  plugins: [
+    new BundleAnalyzerPlugin({}),
+    {
+      apply: (compiler) => {
+        compiler.hooks.done.tap('DonePlugin', (stats) => {
+          console.log('Compile is done !');
+          setTimeout(() => {
+            process.exit(0);
+          });
+        });
+      },
+    },
+  ],
 };
 
 module.exports = (env, args) => {
