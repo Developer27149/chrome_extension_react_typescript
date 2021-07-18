@@ -62,5 +62,6 @@ module.exports = {
     'init_manifest.js',
     'config/manifest.json',
     'build/**/*',
+    'commitlint.config.js',
   ],
 };
