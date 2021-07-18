@@ -172,3 +172,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# linaria
+.linaria-cache/

@@ -80,6 +80,11 @@ const commonConfig = {
           to: './',
           toType: 'dir',
         },
+        {
+          from: 'src/asserts',
+          to: './asserts',
+          toType: 'dir',
+        },
       ],
     }),
   ],
