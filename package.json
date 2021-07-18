@@ -47,7 +47,7 @@
     "eslint-plugin-unicorn": "^34.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.3.2",
-    "husky": "^7.0.1",
+    "husky": "^7.0.0",
     "mini-css-extract-plugin": "^2.1.0",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
@@ -69,25 +69,20 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -c commitlintrc.config.js -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
-    "./src/*.{ts,tsx,js}": [
+    "./src/**/*.{ts,tsx,js}": [
       "eslint -c .eslintrc.js"
     ],
-    "./src/*.{scss,css,less}": [
+    "./src/**/*.{scss,css,less}": [
       "stylelint --config .stylelintrc.json"
     ],
-    "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+    "./src/*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
       "prettier --write"
     ]
   },
   "scripts": {
     "dev": "webpack serve --mode=development --config config/webpack.common.js --open --progress",
-    "build": "webpack build --mode=production --config config/webpack.common.js --progress"
+    "build": "webpack build --mode=production --config config/webpack.common.js --progress",
+    "prepare": "husky install"
   }
 }
